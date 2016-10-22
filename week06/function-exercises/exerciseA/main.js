@@ -1,5 +1,6 @@
 // This code is INCOMPLETE, meaning some things will need massaging and some things are missing.
 // Adjust code appropriately to solve the problems listed.
+//mic2130 start editing
 
 var numPizzas;
 var subTotal;
