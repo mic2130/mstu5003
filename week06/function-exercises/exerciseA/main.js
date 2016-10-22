@@ -9,13 +9,24 @@ var hasDiscount = Boolean('false'); // Hint for prompts
 
 // By convention, these variables represent CONSTANTS (unchanging values)
 var DISCOUNTCODE = "ChicagoStyleNumberOne";
-var DISCOUNTRATE;
+var DISCOUNTRATE = 5;
+var PRICEPERPIZZA = 10;
 // Set the flat rate per pizza
 
 var customerName = prompt('What is your name?');
 var numPizzas = prompt('How many pizzas do you want to order?');
-var askDiscount = prompt('Do you have a discount code? Please, type true or false');
+var askDiscount = prompt('Do you have a discount code? Please, type yes or no');
 var imputDiscount = prompt('Please, type your discount code');
+
+function checkDiscountCode(DISCOUNTCODE){
+	if (DISCOUNTCODE == "ChicagoStyleNumberOne"){
+		hasDiscount = true;
+		alert('Thank you for submitting your code, you will get 5 USD of discount in your total');
+	} else {
+		hasDiscount = false;
+		alert('The discount code is invalid');
+	}
+}
 
 
 /* prompt for the following: 1) number of pizzas in order, 2) Whether they have a discount, 3) The discount code (if they indicated they have one.) */
