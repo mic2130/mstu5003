@@ -11,6 +11,7 @@ var hasDiscount = Boolean('false'); // Hint for prompts
 var DISCOUNTCODE = "ChicagoStyleNumberOne";
 var DISCOUNTRATE = 5;
 var PRICEPERPIZZA = 10;
+var TAXRATE = 20;
 // Set the flat rate per pizza
 
 var customerName = prompt('What is your name?');
@@ -29,13 +30,19 @@ function checkDiscountCode(DISCOUNTCODE){
 }
 
 function getSubtotal(numPizzas, hasDiscount){
+var subtotal = numPizzas * PRICEPERPIZZA - DISCOUNTRATE;
 	if (hasDiscount === true){
-		return numPizzas * PRICEPERPIZZA - DISCOUNTCODE;
+		return subtotal;
 	} if (hasDiscount === false){
-		return numPizzas * PRICEPERPIZZA;
+		var DISCOUNTRATE = 0;
+		return subtotal;
 	}
 }
 
+function getTotal(subtotal, TAXRATE){
+	var total = subtotal - (subtotal * TAXRATE / 100);
+	return total;
+}
 
 /* prompt for the following: 1) number of pizzas in order, 2) Whether they have a discount, 3) The discount code (if they indicated they have one.) */
 
