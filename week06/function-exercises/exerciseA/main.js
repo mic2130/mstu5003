@@ -28,6 +28,14 @@ function checkDiscountCode(DISCOUNTCODE){
 	}
 }
 
+function getSubtotal(numPizzas, hasDiscount){
+	if (hasDiscount === true){
+		return numPizzas * PRICEPERPIZZA - DISCOUNTCODE;
+	} if (hasDiscount === false){
+		return numPizzas * PRICEPERPIZZA;
+	}
+}
+
 
 /* prompt for the following: 1) number of pizzas in order, 2) Whether they have a discount, 3) The discount code (if they indicated they have one.) */
 
