@@ -43,9 +43,14 @@ function getTotal(subtotal){
 	return total;
 }
 
+function writeToPre(text) {
+	document.getElementById('info').innerHTML = text;
+}
+
 function getReciept (customerName, numPizza, hasDiscount, subtotal, total){
 	if (hasDiscount === true){
-		console.log (customerName + 'Thank you for buying JIN PIZZA\n' + 'number of pizzas: ' + numPizza + '\nprice per pizza: '+ PRICEPERPIZZA + '\ndiscount: ' + DISCOUNTRATE + '\nsubtotal: ' + subtotal + '\ntax: ' + TAXRATE + '\nTOTAL: ' + total);
+		var message = customerName + 'Thank you for buying JIN PIZZA\n' + 'number of pizzas: ' + numPizza + '\nprice per pizza: '+ PRICEPERPIZZA + '\ndiscount: ' + DISCOUNTRATE + '\nsubtotal: ' + subtotal + '\ntax: ' + TAXRATE + '\nTOTAL: ' + total;
+		writeToPre(message);
 	}
 }
 
