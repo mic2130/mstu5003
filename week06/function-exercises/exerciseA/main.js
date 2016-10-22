@@ -29,12 +29,11 @@ function checkDiscountCode(DISCOUNTCODE){
 	}
 }
 
-function getSubtotal(numPizzas, hasDiscount){
-var subtotal = numPizzas * PRICEPERPIZZA - DISCOUNTRATE;
+function getSubtotal(numPizzas, hasDiscount, DISCOUNTRATE){
+var subtotal = numPizzas * PRICEPERPIZZA;
 	if (hasDiscount === true){
-		return subtotal;
+		return subtotal - DISCOUNTRATE;
 	} if (hasDiscount === false){
-		var DISCOUNTRATE = 0;
 		return subtotal;
 	}
 }
@@ -44,6 +43,11 @@ function getTotal(subtotal, TAXRATE){
 	return total;
 }
 
+function getReciept (customerName, numPizza, PRICEPERPIZZA, hasDiscount, DISCOUNTRATE, subtotal, TAXRATE, total){
+	if (hasDiscount === true){
+		console.log (customerName + 'Thank you for buying JIN PIZZA\n' + 'number of pizzas: ' + numPizza + '\nprice per pizza: '+ PRICEPERPIZZA + '\ndiscount: ' + DISCOUNTRATE + '\nsubtotal: ' + subtotal + '\ntax: ' + TAXRATE + '\nTOTAL: ' + total);
+	}
+}
 /* prompt for the following: 1) number of pizzas in order, 2) Whether they have a discount, 3) The discount code (if they indicated they have one.) */
 
 /* Write 4 functions: */
