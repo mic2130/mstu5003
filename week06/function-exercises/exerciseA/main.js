@@ -19,7 +19,7 @@ var numPizzas = prompt('How many pizzas do you want to order?');
 var askDiscount = prompt('Do you have a discount code? Please, type yes or no');
 var imputDiscount = prompt('Please, type your discount code');
 
-function checkDiscountCode(DISCOUNTCODE){
+function checkDiscountCode(){
 	if (DISCOUNTCODE == "ChicagoStyleNumberOne"){
 		hasDiscount = true;
 		alert('Thank you for submitting your code, you will get 5 USD of discount in your total');
@@ -29,7 +29,7 @@ function checkDiscountCode(DISCOUNTCODE){
 	}
 }
 
-function getSubtotal(numPizzas, hasDiscount, DISCOUNTRATE){
+function getSubtotal(numPizzas, hasDiscount){
 var subtotal = numPizzas * PRICEPERPIZZA;
 	if (hasDiscount === true){
 		return subtotal - DISCOUNTRATE;
@@ -38,16 +38,18 @@ var subtotal = numPizzas * PRICEPERPIZZA;
 	}
 }
 
-function getTotal(subtotal, TAXRATE){
+function getTotal(subtotal){
 	var total = subtotal - (subtotal * TAXRATE / 100);
 	return total;
 }
 
-function getReciept (customerName, numPizza, PRICEPERPIZZA, hasDiscount, DISCOUNTRATE, subtotal, TAXRATE, total){
+function getReciept (customerName, numPizza, hasDiscount, subtotal, total){
 	if (hasDiscount === true){
 		console.log (customerName + 'Thank you for buying JIN PIZZA\n' + 'number of pizzas: ' + numPizza + '\nprice per pizza: '+ PRICEPERPIZZA + '\ndiscount: ' + DISCOUNTRATE + '\nsubtotal: ' + subtotal + '\ntax: ' + TAXRATE + '\nTOTAL: ' + total);
 	}
 }
+
+
 /* prompt for the following: 1) number of pizzas in order, 2) Whether they have a discount, 3) The discount code (if they indicated they have one.) */
 
 /* Write 4 functions: */
