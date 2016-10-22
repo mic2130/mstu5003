@@ -13,6 +13,10 @@ var DISCOUNTRATE;
 // Set the flat rate per pizza
 
 var customerName = prompt('What is your name?');
+var numPizzas = prompt('How many pizzas do you want to order?');
+var askDiscount = prompt('Do you have a discount code? Please, type true or false');
+var imputDiscount = prompt('Please, type your discount code');
+
 
 /* prompt for the following: 1) number of pizzas in order, 2) Whether they have a discount, 3) The discount code (if they indicated they have one.) */
 
