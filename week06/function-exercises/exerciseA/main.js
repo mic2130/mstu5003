@@ -19,8 +19,8 @@ var numPizzas = prompt('How many pizzas do you want to order?');
 var askDiscount = prompt('Do you have a discount code? Please, type yes or no');
 var imputDiscount = prompt('Please, type your discount code');
 
-function checkDiscountCode(){
-	if (DISCOUNTCODE == "ChicagoStyleNumberOne"){
+function checkDiscountCode(imputDiscount){
+	if (imputDiscount == DISCOUNTCODE){
 		hasDiscount = true;
 		alert('Thank you for submitting your code, you will get 5 USD of discount in your total');
 	} else {
