@@ -9,6 +9,13 @@ document.getElementById('greeting').innerHTML = "Hola!";
 /* Make a function that takes 3 arguments
    Returns 1 String message like this: "Hello Jin Kuwata, your username is fabulous." */
 
+function displayGreeting(username, first, last){
+	return "Hello " + first + last + " your username: " + username + " is faboulous";
+}
+
+document.getElementById('sampleGreeting').innerHTML = console.log (displayGreeting(mic2130, maria, correa));
+
+
 /* Replace the h1 innerText with the message by calling the function you created. */
 
 
