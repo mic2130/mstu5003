@@ -11,6 +11,36 @@ console.log(magicNum);
 
 // Create a function that prompts the user to guess a number within the range of possible numbers and compares the user number to the magic number. Return String, 'low' if user number is low. 'high' if user number is high, 'exact' if user number is correct.
 
+
+
+/*function askUserNumber (){
+var userNumber = prompt ('Guess the magic number and write it');
+}*/
+var userNumber = prompt('Guess the magic number and write it');
+
+
+
+function checkUserNumber(){
+  userNumber;
+
+  while (userNumber > magicNum){
+    alert("high");
+    var userNumber = prompt('Guess the magic number and write it');
+    var magicNum = Math.ceil(Math.random() * 100);
+    console.log(magicNum);
+  }while (userNumber < magicNum){
+    alert("low");
+    var userNumber = prompt('Guess the magic number and write it');
+    var magicNum = Math.ceil(Math.random() * 100);
+    console.log(magicNum);
+  }if (userNumber === magicNum){
+    alert("exact");
+
+  }
+}
+
+checkUserNumber();
+
 // Create a function that takes low, high, or exact as a String argument, and uses this value to give a feedback message to the user.
 
 // Continue this game until the correct number is chosen.
