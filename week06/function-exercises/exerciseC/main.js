@@ -57,9 +57,10 @@ secondBtnEl.addEventListener('click', function(){
 /* Create a function that will return a String  message like so: Jin Kuwata is 40 years old. The age should be a random number between 37 and 65. The name should be come from the html. */
 //ANSWER: Get it! but I cannot take of numbers under 37
 
-
 /* Add an 'click' event listener to your second button. When clicked, it should create the message using the function you just declared previously, and print it to the HTML, replacing YYY. */
 
-
+// ANSWER: I'm trying with this but it doesn't work --> document.getElementById('sampleGreeting').innerHTML =  secondBtnEl.addEventListener('click',());
 
 /* Can you add HTML and extra JS code in this program, so that username, first, and last can be dynamically set from the page input when the basic button is clicked? */
+
+// ANSWER: mmmm so I have to create other imput buttons that will dynamically replace the information of the user? 
