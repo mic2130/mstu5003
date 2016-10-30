@@ -6,10 +6,14 @@ var subTotal;
 var total;
 var hasDiscount = false; // Hint for prompts
 var userCode;
+var PRICEPERPIZZA = 10;
+var TAXRATE = "20%";
+var TAXAPPLY = 0.8;
 
 // By convention, these variables represent CONSTANTS (unchanging values)
-DISCOUNTCODE = "ChicagoStyleNumberOne";
-var DISCOUNTRATE;
+DISCOUNTCODE = "Z";
+var DISCOUNTRATE = "10%";
+var DISCOUNTAPPLY = 0.9;
 // Set the flat rate per pizza
 
 var customerName = prompt('What is your name?');
@@ -22,26 +26,10 @@ numPizzas = prompt("How many pizzas do you want?");
 numPizzas = Number(numPizzas);
 console.log(numPizzas);
 
-hasDiscount = prompt('Do you have a discount code? Please, type yes or no');
-if (hasDiscount === 'yes') {
-    hasDiscount = true;
-} else {
-    hasDiscount = false;
-}
-
-console.log(hasDiscount);
-
-
-if (hasDiscount) {
-    userCode = prompt("write your code");
-} else {
-	
-}
-
 
 function checkDiscountCode(x) {
     if (DISCOUNTCODE === x) {
-        alert("great, you have 5 dollars discount");
+        alert("great, you have 10% discount. Press OK to finish your order and print your receipt");
         hasDiscount = true;
     } else {
         alert("the code is incorrect");
@@ -49,7 +37,55 @@ function checkDiscountCode(x) {
     }
 }
 
-checkDiscountCode(userCode);
+hasDiscount = prompt('Do you have a discount code? Please, type yes or no');
+if (hasDiscount === 'yes') {
+    hasDiscount = true;
+    userCode = prompt("write your code");
+    checkDiscountCode(userCode);
+} else {
+alert("Press OK to finish your order and print your receipt");
+    hasDiscount = false;
+}
+console.log(hasDiscount);
+
+
+
+
+
+
+
+function getSubTotal (){
+  if (hasDiscount){
+    subTotal = (numPizzas * PRICEPERPIZZA * DISCOUNTAPPLY);
+    return subTotal;
+  } else {
+    subTotal = (numPizzas * PRICEPERPIZZA);
+    return subTotal;
+  }
+}
+console.log("your subtotal is " + getSubTotal(numPizzas));
+
+function getTotal (){
+  total = subTotal * TAXAPPLY;
+  return total;
+}
+console.log("your total is " + getTotal(subTotal));
+
+
+function printReciept (){
+  if (hasDiscount) {
+    console.log(
+      "RECIEPT\nCLIENT: " + customerName + "\nNUMBER OF PIZZAS: " + numPizzas + "\nPIZZAS PRIZE: USD" + PRICEPERPIZZA + "\nDISCOUNT: " + DISCOUNTRATE + "\nSUBTOTAL: " + subTotal + "\nTAX RATE: " + TAXRATE + "\nTOTAL: " + total);
+  } else {
+    console.log(
+      "RECIEPT\nCLIENT: " + customerName + "\nNUMBER OF PIZZAS: " + numPizzas + "\nPIZZAS PRIZE: USD" + PRICEPERPIZZA + "\nDISCOUNT: 0" + "\nSUBTOTAL: " + subTotal + "\nTAX RATE: " + TAXRATE + "\nTOTAL: " + total);}
+}
+
+printReciept (customerName, numPizzas, subTotal, total);
+
+
+
+
 
 /* Write 4 functions: */
 // Function that checks if the discount code the user gives matches the known discount code. Does not return anything but will set the has discount state to true if it matches. It will alert the user whether the code worked or not.
