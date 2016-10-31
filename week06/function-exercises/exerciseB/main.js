@@ -2,44 +2,31 @@
 
 // Math.random() generates a number between 0 and 0.999999
 var magicNum = Math.ceil(Math.random() * 100);
-console.log(magicNum);
+var userNumber;
 // What does this line of code actually do part by part?
-// ANSWER: var MagicNum set a variable / It must be the opposite from Math.floor so it must aproximate the given number to it next integer / Math.random returns a number beteween 0 and 1 (not including 1 but including 0)/ *100 multiples the random number by 100 to obtain numbers beteween 0 and 100 /
 // What is the range of possible integers here?
-// ANSWER: 1 to 100
+
+function giveFeedback(x,y){
+  if (x > y){
+      return "your number is high";
+  }else if (x < y){
+    return "your number is low";
+  }else{
+      return "ok";
+  }
+  }
+
+while (userNumber !== magicNum){
+  userNumber = Number(prompt("choose a number between 1 and 100"));
+alert(giveFeedback(userNumber,magicNum));
+}
+
+var magicNum = Math.ceil(Math.random() * 100);
+var userGuess;
+
 
 
 // Create a function that prompts the user to guess a number within the range of possible numbers and compares the user number to the magic number. Return String, 'low' if user number is low. 'high' if user number is high, 'exact' if user number is correct.
-
-
-
-/*function askUserNumber (){
-var userNumber = prompt ('Guess the magic number and write it');
-}*/
-var userNumber = prompt('Guess the magic number and write it');
-
-
-
-function checkUserNumber(){
-  userNumber;
-
-  while (userNumber > magicNum){
-    alert("high");
-    var userNumber = prompt('Guess the magic number and write it');
-    var magicNum = Math.ceil(Math.random() * 100);
-    console.log(magicNum);
-  }while (userNumber < magicNum){
-    alert("low");
-    var userNumber = prompt('Guess the magic number and write it');
-    var magicNum = Math.ceil(Math.random() * 100);
-    console.log(magicNum);
-  }if (userNumber === magicNum){
-    alert("exact");
-
-  }
-}
-
-checkUserNumber();
 
 // Create a function that takes low, high, or exact as a String argument, and uses this value to give a feedback message to the user.
 

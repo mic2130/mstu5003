@@ -1,19 +1,21 @@
 // This code is INCOMPLETE, meaning some things will need massaging and some things are missing.
 // Adjust code appropriately to solve the problems listed.
+var PRICEPERPIZZA = 10;
+var TAXRATE = "20%";
+var TAXAPPLY = 0.8;
+var DISCOUNTCODE = "Z";
+var DISCOUNTRATE = "10%";
+var DISCOUNTAPPLY = 0.9;
 
 var numPizzas;
 var subTotal;
 var total;
 var hasDiscount = false; // Hint for prompts
 var userCode;
-var PRICEPERPIZZA = 10;
-var TAXRATE = "20%";
-var TAXAPPLY = 0.8;
+
 
 // By convention, these variables represent CONSTANTS (unchanging values)
-DISCOUNTCODE = "Z";
-var DISCOUNTRATE = "10%";
-var DISCOUNTAPPLY = 0.9;
+
 // Set the flat rate per pizza
 
 var customerName = prompt('What is your name?');
@@ -82,6 +84,7 @@ function printReciept (){
 }
 
 printReciept (customerName, numPizzas, subTotal, total);
+
 
 
 
