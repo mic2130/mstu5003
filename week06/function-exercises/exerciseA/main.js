@@ -87,6 +87,7 @@ printReciept (customerName, numPizzas, subTotal, total);
 
 
 
+
 /* Write 4 functions: */
 // Function that checks if the discount code the user gives matches the known discount code. Does not return anything but will set the has discount state to true if it matches. It will alert the user whether the code worked or not.
 
