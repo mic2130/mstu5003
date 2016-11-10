@@ -10,14 +10,15 @@ var last = "Kuwata";
 /* Make a function that takes 3 arguments
    Returns 1 String message like this: "Hello Jin Kuwata, your username is fabulous." */
 
-function displayGreeting(username, first, last){
-	return "Hello " + first + last + " your username: " + username + " is faboulous";
+function displayGreeting(x, y, z){
+	return "Hello " + x + " " + y + " your username: " + z + " is faboulous";
 }
+
 
 
 /* Replace the h1 innerText with the message by calling the function you created. */
 
-document.getElementById('greeting').innerHTML =  displayGreeting(username, first, last);
+document.getElementById('greeting').innerHTML =  displayGreeting(first, last, username);
 
 // Try console logging these, what gets returned?
 // ANSWER: The console print the information contained in the element document.getElementById that appear in the html
@@ -63,4 +64,4 @@ secondBtnEl.addEventListener('click', function(){
 
 /* Can you add HTML and extra JS code in this program, so that username, first, and last can be dynamically set from the page input when the basic button is clicked? */
 
-// ANSWER: mmmm so I have to create other imput buttons that will dynamically replace the information of the user? 
+// ANSWER: mmmm so I have to create other imput buttons that will dynamically replace the information of the user?
